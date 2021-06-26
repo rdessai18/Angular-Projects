@@ -27,28 +27,13 @@
         <mat-card-header>
           <mat-card-title>Comments</mat-card-title>
         </mat-card-header>
-        <mat-card-content>
-            <mat-list *ngIf=dish>
-            <mat-list-item>
-              <p matLine> {{dish.comments[0].comment}} </p>
-              <p matLine> {{dish.comments[0].rating}} Stars </p>
-              <p matLine> -- {{dish.comments[0].author}} {{dish.comments[0].date | date}}</p>
-            </mat-list-item>
-            <mat-list-item>
-                <p matLine> {{dish.comments[1].comment}} </p>
-                <p matLine> {{dish.comments[1].rating}} Stars </p>
-                <p matLine> -- {{dish.comments[1].author}} {{dish.comments[1].date | date}}</p>
-              </mat-list-item>
-              <mat-list-item>
-                <p matLine> {{dish.comments[2].comment}} </p>
-                <p matLine> {{dish.comments[2].rating}} Stars </p>
-                <p matLine> -- {{dish.comments[2].author}} {{dish.comments[2].date | date}}</p>
-              </mat-list-item>
-              <mat-list-item>
-                <p matLine> {{dish.comments[3].comment}} </p>
-                <p matLine> {{dish.comments[3].rating}} Stars </p>
-                <p matLine> -- {{dish.comments[3].author}} {{dish.comments[3].date | date}}</p>
-              </mat-list-item>
+        <mat-card-content *ngIf=dish>
+            <mat-list>
+            <mat-list-item *ngFor="let c from dish.comments">
+              <p matLine> {{c.comment}} </p>
+              <p matLine> {{c.rating}} Stars </p>
+              <p matLine> -- {{c.author}} {{c.date | date}}</p>
+            </mat-list-item>            
           </mat-list>
         </mat-card-content>
         </mat-card>
