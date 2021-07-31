@@ -5,6 +5,7 @@ import { Promotion } from '../shared/promotion';
 import { PromotionService } from '../services/promotion.service';
 import { Leader } from '../shared/leader';
 import { LeaderService } from '../services/leader.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { LeaderService } from '../services/leader.service';
 })
 export class HomeComponent implements OnInit {
 
-  dish: Dish;
+  dish: Observable<Dish>;
   promotion: Promotion;
   leader: Leader;
 
